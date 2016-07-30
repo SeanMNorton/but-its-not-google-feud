@@ -1,5 +1,7 @@
 require 'net/http'
+require 'dotenv'
 require 'json'
+Dotenv.load
 
 def get_info
   puts "What are you searching?"
@@ -16,7 +18,7 @@ def send_request(request_string)
 
   request = Net::HTTP::Get.new(uri.request_uri)
   # Request headers
-  request['Ocp-Apim-Subscription-Key'] = 'KEY GOES HERE' #REMOVE KEY WHEN COMMITING
+  request['Ocp-Apim-Subscription-Key'] = ENV['KEY1'] #REMOVE KEY WHEN COMMITING
   # Request body
   request.body = "{body}"
 
