@@ -1,0 +1,12 @@
+<form action="/" method="get">
+  <input name="query">
+  <input type="submit">
+</form>
+
+<div>
+  <% if @options %>
+    <% @options.each do |thing| %>
+      <p> <%= thing %> </p>
+    <% end %>
+  <% end %>
+</div>
