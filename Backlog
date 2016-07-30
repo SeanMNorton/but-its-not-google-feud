@@ -1,0 +1,27 @@
+
+                  App: But It's Not Google Feud
+
+
+            'The Most Basic and Hardly Useful Backlog'
+
+
+Release 0
+ - command line functionality
+ - type search params for BING
+ - parse BING api JSON
+ - print suggestions in list
+
+Release 1
+ - web app functionality
+ - type into search box
+ - return suggestions in list
+
+Release 2
+  -
+  -
+  -
+
+Release 3
+ -
+ -
+ -
