@@ -20,6 +20,7 @@ Release 2
   - auto generate search query on load
   - button to refresh auto search query
   - return suggestions in list
+  - organize files for seperate concerns
 
 Release 3
  -
