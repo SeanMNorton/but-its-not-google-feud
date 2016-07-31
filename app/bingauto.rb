@@ -1,9 +1,3 @@
-require 'net/http'
-require 'dotenv'
-require 'json'
-Dotenv.load
-
-
 def get_info  ## for command line program only
   puts "What are you searching?"
   request = gets.chomp
