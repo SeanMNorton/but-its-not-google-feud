@@ -3,10 +3,10 @@
   <input type="submit">
 </form>
 
-<div>
-  <% if @options %>
+<% if @options %>
+  <div>
     <% @options.each do |thing| %>
       <p> <%= thing %> </p>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
