@@ -11,7 +11,7 @@ end
 def send_request(request_string)
   uri = URI('https://api.cognitive.microsoft.com/bing/v5.0/suggestions/')
   uri.query = URI.encode_www_form({
-      'q' => request_string # Request parameters
+      'q' => "'#{request_string.gsub(" ", "+")}'" # Request parameters
   })
 
   request = Net::HTTP::Get.new(uri.request_uri)
