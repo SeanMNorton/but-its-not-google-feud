@@ -5,8 +5,10 @@
 
 <% if @options %>
   <div>
+    <ol>
     <% @options.each do |thing| %>
-      <p> <%= thing %> </p>
+      <li> <%= thing %> </li>
     <% end %>
+    </ol>
   </div>
 <% end %>
