@@ -3,6 +3,7 @@ require 'dotenv'
 require 'json'
 Dotenv.load
 
+
 def get_info
   puts "What are you searching?"
   request = gets.chomp
@@ -29,9 +30,12 @@ end
 
 def body_parser(response)
   num = 0
+  suggestions = []
   JSON.parse(response.body)["suggestionGroups"][0]['searchSuggestions'].each do |item|
     puts "#{num+=1}) #{item['displayText']}"
+    suggestions << "#{num}) #{item['displayText']}"
   end
+  suggestions
 end
 
 
