@@ -17,9 +17,9 @@ Release 1
  - return suggestions in list
 
 Release 2
-  -
-  -
-  -
+  - auto generate search query on load
+  - button to refresh auto search query
+  - return suggestions in list
 
 Release 3
  -
