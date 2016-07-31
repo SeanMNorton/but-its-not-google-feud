@@ -29,11 +29,11 @@ end
 
 def body_parser(original_query, response)
   suggestions = []
-  JSON.parse(response.body)["suggestionGroups"][0]['searchSuggestions'].each do |item|
+  JSON.parse(response.body)["suggestionGroups"][0]['searchSuggestions'].each do |line|
     # enable for command line program
-    if item['displayText'].match(/\A(#{original_query}\b)/i)
+    if line['displayText'].match(/^#{original_query.chomp}\b/i)
       # puts "#{item['displayText']}"
-      suggestions << item['displayText']
+      suggestions << line['displayText']
     end
   end
   suggestions
