@@ -4,6 +4,10 @@ def get_info  ## for command line program only
   body_parser(send_request(request))
 end
 
+def get_random_query
+  File.readlines('./queries_list.txt').sample
+end
+
 def send_request(request_string)
   uri = URI('https://api.cognitive.microsoft.com/bing/v5.0/suggestions/')
   uri.query = URI.encode_www_form({
