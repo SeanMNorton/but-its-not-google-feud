@@ -23,6 +23,6 @@ Release 2
   - organize files for seperate concerns
 
 Release 3
- -
- -
+ - auto generate search query by category on load
+ - 
  -
