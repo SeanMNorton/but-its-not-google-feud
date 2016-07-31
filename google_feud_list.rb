@@ -12,8 +12,8 @@ questions = [["The Beatles are", "Country music is", "Tom Hanks is", "Indiana Jo
 ]
 
 
-questions.each do |array|
-  array.each do |question|
-    File.open('queries_list.txt', 'a+') { |file|  file.puts(question)}
-  end
-end
+# questions.each do |array|
+#   array.each do |question|
+#     File.open('queries_list.txt', 'a+') { |file|  file.puts(question)}
+#   end
+# end
