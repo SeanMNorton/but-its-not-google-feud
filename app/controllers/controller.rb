@@ -1,8 +1,9 @@
 # require_relative 'bingauto'
 # require 'sinatra'
 get '/' do
+  @query = get_random_query
+  @options = body_parser(send_request(@query))
   if session[:query]
-    @options = body_parser(send_request(session[:query]))
     session.delete(:query)
   end
   erb :main
