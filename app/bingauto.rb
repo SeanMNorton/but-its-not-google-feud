@@ -13,7 +13,7 @@ def get_random_query
 end
 
 def send_request(request_string)
-  # request_string.split(" ").join("+") # doesn't appear to work
+  request_string = request_string.split(" ").join("+") + " + " # doesn't appear to work
   uri = URI('https://api.cognitive.microsoft.com/bing/v5.0/suggestions/')
   uri.query = URI.encode_www_form({
       'q' => "#{request_string}" # Request parameters
@@ -31,10 +31,10 @@ def body_parser(original_query, response)
   suggestions = []
   JSON.parse(response.body)["suggestionGroups"][0]['searchSuggestions'].each do |line|
     p line['displayText']
+    line_text = line["displayText"].gsub('+', " ")
     # enable for command line program
-    if line['displayText'].match(/^#{original_query.chomp}\b/i)
-      # puts "#{item['displayText']}"
-      suggestions << line['displayText']
+    if line_text.match(/^#{original_query.chomp}\b.+/i)
+      suggestions << line_text
     end
   end
   suggestions
