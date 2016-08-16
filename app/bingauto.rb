@@ -37,7 +37,7 @@ def body_parser(original_query, response)
       suggestions << line_text
     end
   end
-  query = Query.create(statement: original_query, responses: suggestions)
+  Query.create(statement: original_query, responses: suggestions)
   # query.repsonses = suggestions
 end
 
