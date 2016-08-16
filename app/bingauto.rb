@@ -9,7 +9,7 @@ def get_info  ## for command line program only
 end
 
 def get_random_query
-  File.readlines('./queries_list.txt').sample
+  statement: File.readlines('./queries_list.txt').sample
 end
 
 def send_request(request_string)
@@ -33,11 +33,12 @@ def body_parser(original_query, response)
     p line['displayText']
     line_text = line["displayText"].gsub('+', " ")
     # enable for command line program
-    if line_text.match(/^#{original_query.chomp}\b.+/i)
+    if line_text.match(/^#{original_query.statement.chomp}\b.+/i)
       suggestions << line_text
     end
   end
-  suggestions
+  i = Query.create(statement: original_query)
+  i.repsonses = suggestions
 end
 
 # enable to make command line program work

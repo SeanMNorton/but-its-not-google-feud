@@ -2,7 +2,7 @@
   <input name="query" value="<%=@query if @query%>">
   <input type="submit">
 </form> -->
-<h3><%=@query if @query%></h3>
+<h3><%=@query.statement if @query%></h3>
 <a href="/">Refresh</a>
 
 <% if @options %>
