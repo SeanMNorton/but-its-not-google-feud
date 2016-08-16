@@ -1,14 +1,12 @@
-<!-- <form action="/" method="post">
-  <input name="query" value="<%=@query if @query%>">
-  <input type="submit">
-</form> -->
-<h3><%=@query if @query%></h3>
-<a href="/">Refresh</a>
+<h3><%=@query.statement if @query%></h3>
+<form action="/" method="post">
+  <input type="submit" value="Get Phrase">
+</form>
 
-<% if @options %>
+<% unless @query.responses.empty? %>
   <div>
     <ol>
-    <% @options.each do |thing| %>
+    <% @query.responses.each do |thing| %>
       <li> <%= thing %> </li>
     <% end %>
     </ol>
