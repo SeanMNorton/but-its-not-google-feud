@@ -1,4 +1,4 @@
 class Query < ActiveRecord::Base
   validates :statement, presence: true
-  serialize :responses
+  serialize :responses, Array
 end

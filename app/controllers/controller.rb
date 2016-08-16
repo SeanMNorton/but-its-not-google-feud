@@ -1,16 +1,12 @@
 # require_relative 'bingauto'
 # require 'sinatra'
 get '/' do
-  @query = get_random_query
-  @options = body_parser(@query, send_request(@query.statement))
-  # @query.responses = @options
-  if session[:query]
-    session.delete(:query)
-  end
+  @query = Query.last
   erb :main
 end
 
 post '/' do
-  session[:query] = params[:query] if params[:query]
+  @query = get_random_query
+  @query = body_parser(@query, send_request(@query))
   redirect back
 end
